@@ -36,7 +36,7 @@ namespace Weatherappmobile.ViewModels
 
         public async void GetWeather()
         {
-            var result = await _rest.getweatherinfo("Warsaw");
+            var result = await _rest.getweatherinfo("Lubon", 0, 0);
             Weather = result;
         }
     }
