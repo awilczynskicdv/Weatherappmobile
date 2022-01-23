@@ -34,9 +34,9 @@ namespace Weatherappmobile.ViewModels
             GetWeather();
         }
 
-        public async void GetWeather()
-        {
-            var result = await _rest.getweatherinfo("Lubon", 0, 0);
+        public async void GetWeather(string city = "Warszawa")
+        { 
+            var result = await _rest.getweatherinfo(city, 0, 0);
             Weather = result;
         }
     }

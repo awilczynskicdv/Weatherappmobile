@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Weatherappmobile.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -21,5 +21,11 @@ namespace Weatherappmobile.Views
         {
             await Navigation.PushAsync(new HistoryPage());
         }
+        private void SearchBtn_Clicked(object sender, EventArgs e)
+        {
+            
+        }
+
+        
     }
 }

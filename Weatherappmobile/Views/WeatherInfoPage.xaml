@@ -51,6 +51,23 @@
             Grid.Row="0"
                 
                 Margin="10,20"/>-->
+            <Entry 
+                Margin="0, 20"
+                VerticalOptions="Start"
+                x:Name="city"
+                Grid.Column="0"
+                Grid.Row="0"
+                />
+            <Button
+                Margin="0, 20"
+                VerticalOptions="Start"
+                Text="Search"
+                TextColor="White"
+                x:Name="SearchBtn"
+                Grid.Column="1"
+                Grid.Row="0"
+                Clicked="SearchBtn_Clicked"
+                />
             <Label
             Grid.ColumnSpan="2"
             Grid.Column="0"
@@ -111,7 +128,7 @@
                     Grid.ColumnSpan="2"
                     TextColor="White"
                     Text="Check your weather's history "
-                    Grid.Row="10"
+                    Grid.Row="8"
                     HorizontalOptions="CenterAndExpand"
                     Clicked="GoToHistoryBtn_Clicked"
                     WidthRequest="600"
