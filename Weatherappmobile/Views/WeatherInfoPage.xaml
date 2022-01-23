@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodel="clr-namespace:Weatherappmobile.ViewModels"
+             x:Class="Weatherappmobile.Views.WeatherInfoPage"
+             Title="WeatherInfoPage">
+    <ContentPage.BindingContext>
+        <viewmodel:WeatherInfoViewModel></viewmodel:WeatherInfoViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView>
+            <CollectionView ItemsSource="{Binding Weather}" SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout HorizontalOptions="FillAndExpand" Margin="0" Padding="0" Background="red">
+                            <Label Text="asdasdasd" FontSize="Medium" TextColor="Black" Background="red"></Label>
+                            <Label Text="{Binding wind.speed}" FontSize="Medium" TextColor="Black" Background="yellow"></Label>
+                            <Label Text="{Binding sys.country}" FontSize="Medium" TextColor="Black" Background="green"></Label>
+                            <Label Text="{Binding name}" FontSize="Medium" TextColor="Black" Background="blue"></Label>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>-->
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodel="clr-namespace:Weatherappmobile.ViewModels"
+             x:Class="Weatherappmobile.Views.WeatherInfoPage"
+             Title="WeatherInfoPage">
+    <ContentPage.BindingContext>
+        <viewmodel:WeatherInfoViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="asdasdasd" FontSize="Medium" TextColor="Black" Background="red"></Label>
+            <Label Text="{Binding Weather.wind.speed}" FontSize="Medium" TextColor="Black" Background="yellow"></Label>
+            <Label Text="{Binding Weather.sys.country}" FontSize="Medium" TextColor="Black" Background="green"></Label>
+            <Label Text="{Binding Weather.name}" FontSize="Medium" TextColor="Black" Background="blue"></Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
