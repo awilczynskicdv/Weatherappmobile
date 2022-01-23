@@ -16,5 +16,10 @@ namespace Weatherappmobile.Views
         {
             InitializeComponent();
         }
+
+        private async void GoToHistoryBtn_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new HistoryPage());
+        }
     }
 }

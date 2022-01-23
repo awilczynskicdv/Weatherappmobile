@@ -31,11 +31,93 @@
         <viewmodel:WeatherInfoViewModel />
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="asdasdasd" FontSize="Medium" TextColor="Black" Background="red"></Label>
-            <Label Text="{Binding Weather.wind.speed}" FontSize="Medium" TextColor="Black" Background="yellow"></Label>
-            <Label Text="{Binding Weather.sys.country}" FontSize="Medium" TextColor="Black" Background="green"></Label>
-            <Label Text="{Binding Weather.name}" FontSize="Medium" TextColor="Black" Background="blue"></Label>
-        </StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <!--<Label 
+               Font="Bold, 16"
+               VerticalOptions="Start"
+               Text="{Binding Weather.sys.country}"
+            Grid.Column="0"
+            Grid.Row="0"
+                
+                Margin="10,20"/>-->
+            <Label
+            Grid.ColumnSpan="2"
+            Grid.Column="0"
+            Grid.Row="1"
+            Font="Bold, 32"
+            Text="{Binding Weather.name}"
+            TextColor="black"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+                Margin="50, 2"
+                
+            />
+            <Label
+            Grid.ColumnSpan="2"
+            Grid.Column="0"
+            Grid.Row="2"
+            Font="24"
+            Text="{Binding Weather.sys.country}"
+            TextColor="black"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+                
+            />
+            <Label 
+            Grid.Column="0"
+                Grid.ColumnSpan="2"
+            Grid.Row="3"
+            Font="Bold, 52"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+            Text="{Binding Weather.main.temp , StringFormat='{0:F0}°C'}"
+            TextColor="black"
+                Margin="10, 2"
+                
+            />
+            <Label 
+            Grid.Column="0"
+            Grid.Row="4"
+            Font="16"
+                VerticalOptions="Start"
+            HorizontalOptions="End"
+            Text="Wiatr:  "
+            TextColor="black"
+                Margin="0, 0"
+                
+            />
+
+            <Label
+            Grid.Column="1"
+            Grid.Row="4"
+                Font="16"
+            VerticalOptions="Start"
+            HorizontalOptions="Start"
+            Text="{Binding Weather.wind.speed , StringFormat='{0:F2} km/h'}"
+            />
+            <Button x:Name="GoToHistoryBtn"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    TextColor="White"
+                    Text="Check your weather's history "
+                    Grid.Row="10"
+                    HorizontalOptions="CenterAndExpand"
+                    Clicked="GoToHistoryBtn_Clicked"
+                    WidthRequest="600"
+                    HeightRequest="120"/>
+
+
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

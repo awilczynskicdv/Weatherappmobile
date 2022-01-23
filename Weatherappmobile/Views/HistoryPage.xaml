@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Weatherappmobile.Views.HistoryPage"
+             Title="History">
+    <StackLayout>
+
+        <CollectionView x:Name="pogoda">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding name}" Font="12" Margin="10, 5"/>
+                        <Label Text="{Binding country}" Font="8"></Label>
+                        <Label Text="{Binding temp , StringFormat='{0:F0}°C'}" Font="24" HorizontalOptions="CenterAndExpand"></Label>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button Text="Historia wyszukiwań" Clicked="Button_Clicked" />
+    </StackLayout>
+
+</ContentPage>

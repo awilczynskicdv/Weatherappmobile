@@ -5,19 +5,40 @@
              xmlns:vm="clr-namespace:Weatherappmobile.ViewModels"
              Title="{Binding Title}">
 
-    <StackLayout>
-        <Button Text="Historia wyszukiwań" Clicked="Button_Clicked" />
-        <CollectionView x:Name="pogoda">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <StackLayout>
-                        <Label Text="{Binding name}"></Label>
-                        <Label Text="{Binding country}"></Label>
-                        <Label Text="{Binding temp}"></Label>
-                    </StackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-    </StackLayout>
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+                <Label Text="Check your weather right now!" FontSize="Title"/>
+                <Label Text="This application will get your localization and displays weather in your area! " FontSize="16" Padding="0,0,0,0"/>
+                <Label FontSize="16" Padding="0,24,0,0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Check weather right now!"/>
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Button Margin="0,10,0,0" Text="Go!!"
+                        x:Name="GoButton"
+                        Clicked="GoButton_Clicked"
+                        BackgroundColor="{StaticResource Primary}"
+                        TextColor="White"/>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
 </ContentPage>
