@@ -22,10 +22,10 @@ namespace Weatherappmobile.Services
             client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Add("x-functions-key", "QVxgZ4lzpkmc5x1AXCZOwdn3VadGSX6sRhzQEl7BhuDObdYJbi75pA==");
             HttpResponseMessage response = await client.GetAsync(URL);
-            HttpResponseMessage responseAdd = await client.PostAsync(URLADD, null);
 
             if (response.IsSuccessStatusCode)
             {
+                HttpResponseMessage responseAdd = await client.PostAsync(URLADD, null);
                 var result = await response.Content.ReadAsStringAsync();
                 var json = JsonConvert.DeserializeObject<Root>(result);
                 return json;
