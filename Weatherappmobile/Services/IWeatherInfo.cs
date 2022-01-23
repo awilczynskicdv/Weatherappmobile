@@ -9,6 +9,6 @@ namespace Weatherappmobile.Services
 {
     public interface IWeatherInfo
     {
-        Task<Root> getweatherinfo(string city);
+        Task<Root> getweatherinfo(string city, double optionalLon, double optionalLat);
     }
 }
