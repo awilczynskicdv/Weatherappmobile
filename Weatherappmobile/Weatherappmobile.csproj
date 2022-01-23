@@ -12,6 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\VS 201\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v9.0\Mono.Android.dll</HintPath>
+    </Reference>
     <Reference Include="System.Device">
       <HintPath>..\..\..\Users\barto\Downloads\System.Device.dll</HintPath>
     </Reference>

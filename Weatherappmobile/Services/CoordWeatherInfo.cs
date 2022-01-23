@@ -1,29 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Device.Location;
+using Xamarin.Essentials;
 using System.Net.Http;
 using Newtonsoft.Json;
 using WeatherApp.Model;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Weatherappmobile.Services
 {
     public class CoordWeatherInfo : ICoordWeatherInfo
     {
-        string URLtemplate = "https://weatherappfn.azurewebsites.net/api/CurrentweatherTrigger?lon={}&lat={1}";
+        string URLtemplate = "https://weatherappfn.azurewebsites.net/api/CurrentweatherTrigger?lon={0}&lat={1}";
         string URLADDtemplate = "https://weatherappfn.azurewebsites.net/api/AddWeatherInfoToDbTrigger?lon={0}&lat={1}";
 
         public async Task<Root> getcoordweatherinfo(double Lon, double Lat)
         {
-            GeoCoordinateWatcher watcher = new GeoCoordinateWatcher();
+            CancellationTokenSource cts;
+            var request = new GeolocationRequest(GeolocationAccuracy.Medium, TimeSpan.FromSeconds(10));
+            cts = new CancellationTokenSource();
+            var location = await Geolocation.GetLocationAsync(request, cts.Token);
 
-            watcher.TryStart(false, TimeSpan.FromMilliseconds(1000));
-
-            GeoCoordinate coord = watcher.Position.Location;
-        
-            Lon = coord.Longitude;
-            Lat = coord.Latitude;
+            Lon = location.Longitude;
+            Lat = location.Latitude;
             string URL = string.Format(URLtemplate, Lon, Lat);
             string URLADD = string.Format(URLADDtemplate, Lon, Lat);
 
