@@ -12,11 +12,12 @@
                         <Label Text="{Binding name}" Font="18" Margin="10, 5"/>
                         <Label Text="{Binding country}" Font="12"></Label>
                         <Label Text="{Binding temp , StringFormat='{0:F0}°C'}" Font="24" HorizontalOptions="CenterAndExpand"></Label>
+                        <Label Text="{Binding speed, StringFormat='{0:F2} km/h'}" Font="18" HorizontalOptions="CenterAndExpand"></Label>
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        <Button Text="Historia wyszukiwań" Clicked="Button_Clicked" />
+        <Button Text="POKAŻ HISTORIĘ WYSZUKIWAŃ" Clicked="Button_Clicked" />
     </StackLayout>
 
 </ContentPage>
