@@ -68,6 +68,16 @@
                 Grid.Row="0"
                 Command="{Binding ButtonCommand}"
                 />
+            <Button
+                Margin="0, 20"
+                VerticalOptions="Start"
+                Text="Gps"
+                TextColor="White"
+                x:Name="LocationBtn"
+                Grid.Column="2"
+                Grid.Row="0"
+                Command="{Binding ButtonCommandLocation}"
+                />
             <Label
             Grid.ColumnSpan="2"
             Grid.Column="0"
