@@ -4,22 +4,22 @@
              x:Class="Weatherappmobile.Views.HistoryPage"
              Title="History">
     <StackLayout>
-        <Label Text="  City    Country    Temperature             Wind" Font="18" HorizontalOptions="StartAndExpand"/>
+        <Label Text="  City    Country    Temperature             Date" Font="Bold, 18" TextColor="Black" HorizontalOptions="StartAndExpand"/>
 
         <CollectionView x:Name="pogoda">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Orientation="Horizontal">
 
-                        <Label Text="{Binding name}" Font="18" Margin="10, 5"/>
-                        <Label Text="{Binding country}" Font="12"></Label>
-                        <Label Text="{Binding temp , StringFormat='{0:F0}°C'}" Font="24" HorizontalOptions="CenterAndExpand"></Label>
-                        <Label Text="{Binding speed, StringFormat='{0:F2} km/h'}" Font="18" HorizontalOptions="CenterAndExpand"></Label>
+                        <Label Text="{Binding name}" Font="18" Margin="10, 5" HorizontalTextAlignment="Start" WidthRequest="75"/>
+                        <Label Text="{Binding country}" Font="12" HorizontalTextAlignment="Start" WidthRequest="30"></Label>
+                        <Label Text="{Binding temp , StringFormat='{0:F0}°C'}" Font="24" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Start" WidthRequest="100" ></Label>
+                        <Label Text="{Binding createdOn}" Font="18" HorizontalOptions="CenterAndExpand" WidthRequest="100" HorizontalTextAlignment="Start"></Label>
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        <Button Text="POKAŻ HISTORIĘ WYSZUKIWAŃ" Clicked="Button_Clicked" />
+        <Button Text="SHOW HISTORY" Clicked="Button_Clicked" />
     </StackLayout>
 
 </ContentPage>
