@@ -4,11 +4,13 @@
              x:Class="Weatherappmobile.Views.HistoryPage"
              Title="History">
     <StackLayout>
+        <Label Text="  City    Country    Temperature             Wind" Font="18" HorizontalOptions="StartAndExpand"/>
 
         <CollectionView x:Name="pogoda">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Orientation="Horizontal">
+
                         <Label Text="{Binding name}" Font="18" Margin="10, 5"/>
                         <Label Text="{Binding country}" Font="12"></Label>
                         <Label Text="{Binding temp , StringFormat='{0:F0}°C'}" Font="24" HorizontalOptions="CenterAndExpand"></Label>
