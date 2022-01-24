@@ -21,7 +21,7 @@ namespace Weatherappmobile.Services
             if(lon == 0 && lat == 0)
             {
                 URL = $"{baseURL}city={city}";
-                URLADD = $"{baseURLADD}city ={city}";
+                URLADD = $"{baseURLADD}city={city}";
             }
             else
             {
