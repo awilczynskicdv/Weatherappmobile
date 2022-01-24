@@ -3,7 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Text;
+using System.Windows.Input;
 using WeatherApp.Model;
 using Weatherappmobile.Services;
 using Xamarin.Forms;
@@ -18,26 +20,46 @@ namespace Weatherappmobile.ViewModels
 
         private Root weather;
 
+        public ICommand ButtonCommand { get; private set; }
+
+        private string cityName;
+        public string CityName
+        {
+            get { return cityName; }
+            set
+            {
+                cityName = value;
+                OnPropertyChanged();
+            }
+        }
+
         public Root Weather
         {
             get { return weather; }
             set
             {
                 weather = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Weather"));
+                OnPropertyChanged();
             }
         }
 
 
         public WeatherInfoViewModel()
         {
-            GetWeather();
+            ButtonCommand = new Command(() => {
+                GetWeather(cityName);
+            });
         }
 
-        public async void GetWeather(string city = "Warszawa")
+        public async void GetWeather(string city)
         { 
             var result = await _rest.getweatherinfo(city, 0, 0);
             Weather = result;
+        }
+
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

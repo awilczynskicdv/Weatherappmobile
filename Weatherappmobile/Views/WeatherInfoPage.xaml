@@ -54,9 +54,9 @@
             <Entry 
                 Margin="0, 20"
                 VerticalOptions="Start"
-                x:Name="city"
                 Grid.Column="0"
                 Grid.Row="0"
+                Text="{Binding CityName, Mode=TwoWay}"
                 />
             <Button
                 Margin="0, 20"
@@ -66,7 +66,7 @@
                 x:Name="SearchBtn"
                 Grid.Column="1"
                 Grid.Row="0"
-                Clicked="SearchBtn_Clicked"
+                Command="{Binding ButtonCommand}"
                 />
             <Label
             Grid.ColumnSpan="2"

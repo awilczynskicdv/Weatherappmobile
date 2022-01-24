@@ -11,19 +11,22 @@ namespace Weatherappmobile.Services
 {
     public class WeatherInfo : IWeatherInfo
     {
-        string URL = "https://weatherappfn.azurewebsites.net/api/CurrentweatherTrigger?";
-        string URLADD = "https://weatherappfn.azurewebsites.net/api/AddWeatherInfoToDbTrigger?";
+        string baseURL = "https://weatherappfn.azurewebsites.net/api/CurrentweatherTrigger?";
+        string baseURLADD = "https://weatherappfn.azurewebsites.net/api/AddWeatherInfoToDbTrigger?";
+
+        string URL = "";
+        string URLADD = "";
         public async Task<Root> getweatherinfo(string city, double lon, double lat)
         {
             if(lon == 0 && lat == 0)
             {
-                URL += $"city={city}";
-                URLADD += $"city={city}";
+                URL = $"{baseURL}city={city}";
+                URLADD = $"{baseURLADD}city ={city}";
             }
             else
             {
-                URL += $"lon={lon}&lat={lat}";
-                URLADD += $"lon={lon}&lat={lat}";
+                URL = $"{baseURL}lon={lon}&lat={lat}";
+                URLADD = $"{baseURLADD}lon={lon}&lat={lat}";
             }
             
             //Getting and posting data with azure functions

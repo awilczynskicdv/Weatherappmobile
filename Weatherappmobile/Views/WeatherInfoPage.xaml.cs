@@ -21,10 +21,10 @@ namespace Weatherappmobile.Views
         {
             await Navigation.PushAsync(new HistoryPage());
         }
-        private void SearchBtn_Clicked(object sender, EventArgs e)
-        {
-            
-        }
+        //private void SearchBtn_Clicked(object sender, EventArgs e)
+        //{
+        //    
+        //}
 
         
     }
