@@ -38,6 +38,7 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -61,6 +62,7 @@
             <Button
                 Margin="0, 20"
                 VerticalOptions="Start"
+                HorizontalOptions="Start"
                 Text="Search"
                 TextColor="White"
                 x:Name="SearchBtn"
@@ -71,10 +73,11 @@
             <Button
                 Margin="0, 20"
                 VerticalOptions="Start"
-                Text="Gps"
+                HorizontalOptions="End"
+                Text="GPS"
                 TextColor="White"
                 x:Name="LocationBtn"
-                Grid.Column="2"
+                Grid.Column="1"
                 Grid.Row="0"
                 Command="{Binding ButtonCommandLocation}"
                 />
@@ -132,6 +135,14 @@
             VerticalOptions="Start"
             HorizontalOptions="Start"
             Text="{Binding Weather.wind.speed , StringFormat='{0:F2} km/h'}"
+            />
+            <Label
+            Grid.Column="1"
+            Grid.Row="5"
+                Font="16"
+            VerticalOptions="Start"
+            HorizontalOptions="Start"
+            Text="{Binding Weather.weather.description}"
             />
             <Button x:Name="GoToHistoryBtn"
                     Grid.Column="0"
